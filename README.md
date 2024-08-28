@@ -50,7 +50,7 @@ Print requirements:
 - **Weekend**: 40.40 + 15% = R46.46
 - **5% Discount**: for more than 7 vitamins for a normal bucket: 44.14
 - **No Discount**: if the treats are in total 20 or less
-- **Filling The Bucket**: 44.14 + 2 = R69.392
+- **Filling The Bucket**: 44.14 + 2 = R46.14
 
 ### Not A Weekend
 |      Input     |     Output    |                  Comments                   |
