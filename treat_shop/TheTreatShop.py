@@ -32,11 +32,43 @@ class TheTreatShop:
         return total
 
 def run():
-    biscuits = int(input("Number of biscuits: "))
-    chewies = int(input("Number of chewies: "))
-    vitamins = int(input("Number of vitamins: "))
-    bucket_size = input("Bucket size ('Normal'/'Large'): ")
-    is_weekend = input("Is today Friday, Saturday or Sunday? ('Y'/'N'): ")
+    biscuits = -1
+    chewies = -1
+    vitamins = -1
+    bucket_size = ""
+    is_weekend = ""
+
+    # For readability, start on a new line
+    print("\n")
+
+    while True:
+        biscuits = int(input("Number of biscuits: "))
+        if biscuits > 200 or biscuits < 0:
+            print("Please enter a value from 0 and 200. Please try again.")
+            continue
+        
+        chewies = int(input("Number of chewies: "))
+        if chewies > 200 or chewies < 0:
+            print("Please enter a value from 0 and 200. Please try again.")
+            continue
+        
+        vitamins = int(input("Number of vitamins: "))
+        if vitamins > 200 or vitamins < 0:
+            print("Please enter a value from 0 and 200. Please try again.")
+            continue
+
+        bucket_size = input("Bucket size ('Normal'/'Large'): ").capitalize()
+        if not bucket_size in ["Normal","Large"]:
+            print("Only 'Normal' or 'Large' is allowed. Please try again.")
+            continue
+
+        is_weekend = input("Is today Friday, Saturday or Sunday? ('Y'/'N'): ").capitalize()
+        if not is_weekend in ["Y","N"]:
+            print("Only 'Y' or 'N' is allowed. Please try again.")
+            continue
+
+        # All passed
+        break
 
     myTreatShop = TheTreatShop(biscuits,chewies,vitamins,bucket_size,is_weekend)
     total = myTreatShop.calculate()
